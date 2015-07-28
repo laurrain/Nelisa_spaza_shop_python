@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container col-xs-12">
+<div class="cols-xs-10 shifter">
+	<table class = "table table-bordered table-striped">
+    <a class="btn btn-default backBtn" href="/" role="button">Back</a><br><br>
+    <form class = "loginForm text-center" action="/all_suppliers" method = "post">
+      <input name = "shop" placeholder = "shop" type = "text" value="{{shop}}"></input>
+      <button class = "btn btn-primary addBtn">Add</button>
+    </form>
+	 	<h2>Suppliers</h2>
+      <tr>
+        <th>Suppliers Name</th>
+      </tr>
+    {% for entry in entries %}
+      <tr>
+        <td>{{entry.shop}}</td>
+      </tr>
+    {% else %}
+      <em>No entries here so far</em>
+    {% endfor %}
+    </table>
+</div>
+</div>
+{% endblock %}

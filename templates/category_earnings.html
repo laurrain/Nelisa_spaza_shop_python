@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container col-xs-12">
+<div class="cols-xs-10 shifter">
+	<table class = "table table-bordered table-striped">
+    <a class="btn btn-default backBtn" href="/" role="button">Back</a>
+	 	<h2>Categories Earnings</h2>
+      <tr>
+        <th>Category</th>
+        <th>Earnings</th>
+      </tr>
+    {% for entry in entries %}
+      <tr>
+        <td>{{entry.cat_name}}</td>
+        <td>{{entry.earnings}}</td>
+      </tr>
+    {% else %}
+      <em>Unbelievable.  No entries here so far</em>
+    {% endfor %}
+    </table>
+</div>
+</div>
+{% endblock %}
